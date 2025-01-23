@@ -1,20 +1,50 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header class="rrrr" [translucent]="true">
+  
     <ion-title>
-      Blank
+     <h1>Controlador de eventos</h1> 
     </ion-title>
-  </ion-toolbar>
+  <h3>Quiz 1 parcial 1 DAMM Alberto Pérez 6C</h3>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content id= "tt"[fullscreen]="false">
+  
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  
+    <strong>Crear un nuevo evento </strong>
+  
+    <ion-input [(ngModel)]="event.value" type="text" placeholder="Nombre del evento"></ion-input><br> 
+    <label >Fecha de inicio<ion-input [(ngModel)]="date1.value" type="date" ></ion-input></label><br>
+    <label >Fecha final<ion-input [(ngModel)]="date2.value" type="date" ></ion-input></label><br>
+    <ion-input [(ngModel)]="loc.value" type="text" placeholder="Ubicación"></ion-input><br>
+    <ion-input [(ngModel)]="name.value" type="text" placeholder="Nombre del encargado"></ion-input><br>
+    <ion-input  [(ngModel)]="tel.value" type="number"  placeholder="telefono del encargado"></ion-input><br>
+  
+  <ion-button (click)="up()">agregar evento</ion-button>
+  <ion-grid>
+    <ion-row>
+        <ion-col>evento</ion-col>
+        <ion-col>fecha inicio</ion-col>
+        <ion-col>fecha final</ion-col>
+        <ion-col>ubicacion</ion-col>
+        <ion-col>encargado</ion-col>
+        <ion-col>telefono</ion-col>
+        <ion-col>confirmacion</ion-col>
+        </ion-row>
+  <ion-row *ngFor="let x of lol ">
+    
+      
+        <ion-col>{{x.event}}</ion-col>
+        <ion-col>{{x.date1}}</ion-col>
+        <ion-col>{{x.date2}}</ion-col>
+        <ion-col>{{x.loc}}</ion-col>
+        <ion-col>{{x.name}}</ion-col>
+        <ion-col>{{x.tel}}</ion-col>
+        
+        <ion-col><ion-checkbox>Confirmar</ion-checkbox></ion-col>
+        
+   
+    
+   
+  </ion-row>
+</ion-grid>
 </ion-content>
